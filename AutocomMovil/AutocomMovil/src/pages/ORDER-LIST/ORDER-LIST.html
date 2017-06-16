@@ -13,6 +13,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="home" padding>
+  <ion-item>
+    <ion-input type="text" placeholder="Buscar orden..." (input)="searchOrdenDB($event, searchKey)"></ion-input>
+  </ion-item>
 
+  <ion-list>
+    <ion-item *ngFor="let orden of ordenes" (click)="itemTapped($event, orden)">
+      <h2>{{orden.data.descripcion}}</h2>
+      <p >{{orden.data.VIN}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

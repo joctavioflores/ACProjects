@@ -1,5 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ordenesws } from '../service/ordenesws';
+import { ORDER_INFOPage } from '../ORDER-INFO/ORDER-INFO'
 
 /*
   Generated class for the ORDER_LIST page.
@@ -9,14 +11,40 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
     selector: 'page-ORDER_LIST',
-    templateUrl: 'ORDER-LIST.html'
+    templateUrl: 'ORDER-LIST.html',
+    providers: [ordenesws]
 })
 export class ORDER_LISTPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    ordenes: Array<any>;
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad ORDER_LISTPage');
+    constructor(public navCtrl: NavController, public OrdenesWs: ordenesws) { }
+
+    searchOrdenDB(event, key) {
+        console.log(event.target.value);
+        if (event.target.value.length > 2) {
+            this.OrdenesWs.buscarOrden(event.target.value).subscribe(
+                data => {
+                    this.ordenes = data.results;
+                    console.log("Se obtiene la informacion: " + data);
+                },
+                err => {
+                    console.log(err);
+                },
+                () => console.log('Busqueda de ordenes completado...')
+            );
+        }
+    }   
+
+    itemTapped(event, orden ) {
+        this.navCtrl.push(ORDER_INFOPage, {
+            orden: orden
+        });
     }
+
+
+    //ionViewDidLoad() {
+    //    console.log('ionViewDidLoad ORDER_LISTPage');
+    //}
 
 }
