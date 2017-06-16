@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/GoVirtual/WsVDealer/WsCargaDatos" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/GoVirtual/WsVDealer/WsCargaDatos" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CARGA DE DATOS</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/GoVirtual/WsVDealer/WsCargaDatos">
+      <s:element name="Schedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="razonsocial" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distribuidor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompruebaConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="distribuidor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompruebaConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompruebaConexionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="distribuidor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaTraslado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendDatosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComprobarCargaEAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="distribuidor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaTraslado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComprobarCargaEATResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComprobarCargaEATResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutaSQLEAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="distribuidor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaTraslado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutaSQLEATResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjecutaSQLEATResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:Schedule" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompruebaConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:CompruebaConexion" />
+  </wsdl:message>
+  <wsdl:message name="CompruebaConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:CompruebaConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendDatosSoapIn">
+    <wsdl:part name="parameters" element="tns:SendDatos" />
+  </wsdl:message>
+  <wsdl:message name="SendDatosSoapOut">
+    <wsdl:part name="parameters" element="tns:SendDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComprobarCargaEATSoapIn">
+    <wsdl:part name="parameters" element="tns:ComprobarCargaEAT" />
+  </wsdl:message>
+  <wsdl:message name="ComprobarCargaEATSoapOut">
+    <wsdl:part name="parameters" element="tns:ComprobarCargaEATResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSQLEATSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutaSQLEAT" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSQLEATSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutaSQLEATResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSCargaDatosSoap">
+    <wsdl:operation name="Schedule">
+      <wsdl:input message="tns:ScheduleSoapIn" />
+      <wsdl:output message="tns:ScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompruebaConexion">
+      <wsdl:input message="tns:CompruebaConexionSoapIn" />
+      <wsdl:output message="tns:CompruebaConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDatos">
+      <wsdl:input message="tns:SendDatosSoapIn" />
+      <wsdl:output message="tns:SendDatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComprobarCargaEAT">
+      <wsdl:input message="tns:ComprobarCargaEATSoapIn" />
+      <wsdl:output message="tns:ComprobarCargaEATSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSQLEAT">
+      <wsdl:input message="tns:EjecutaSQLEATSoapIn" />
+      <wsdl:output message="tns:EjecutaSQLEATSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSCargaDatosSoap" type="tns:WSCargaDatosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Schedule">
+      <soap:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/Schedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompruebaConexion">
+      <soap:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/CompruebaConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDatos">
+      <soap:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/SendDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComprobarCargaEAT">
+      <soap:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/ComprobarCargaEAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSQLEAT">
+      <soap:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/EjecutaSQLEAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSCargaDatosSoap12" type="tns:WSCargaDatosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Schedule">
+      <soap12:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/Schedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompruebaConexion">
+      <soap12:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/CompruebaConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDatos">
+      <soap12:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/SendDatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComprobarCargaEAT">
+      <soap12:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/ComprobarCargaEAT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSQLEAT">
+      <soap12:operation soapAction="http://localhost/GoVirtual/WsVDealer/WsCargaDatos/EjecutaSQLEAT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSCargaDatos">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CARGA DE DATOS</wsdl:documentation>
+    <wsdl:port name="WSCargaDatosSoap" binding="tns:WSCargaDatosSoap">
+      <soap:address location="http://localhost/madero/GoVirtualMCo/WsVDealer/WsCargarDatos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSCargaDatosSoap12" binding="tns:WSCargaDatosSoap12">
+      <soap12:address location="http://localhost/madero/GoVirtualMCo/WsVDealer/WsCargarDatos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

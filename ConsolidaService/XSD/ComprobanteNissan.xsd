@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- editado con XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) por OCTAVIO FLORES (PERSONAL) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://repository.edicomnet.com/schemas/mx/cfd/addenda" targetNamespace="http://repository.edicomnet.com/schemas/mx/cfd/addenda" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ComprobanteNissan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Extras_Header_1" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Tipo" type="xs:string" form="unqualified"/>
+									<xs:attribute name="Valor" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Datos_Cliente" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="DC-DIRECCION1" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC-DIRECCION3" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC-DIRECCION4" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC-DIRECCION5" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC-RAZONSOCIAL" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC-RFC" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DC.CVECLIENTE" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Terminos_de_pago" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="TP-CONDPAGO1" type="xs:string" form="unqualified"/>
+									<xs:attribute name="TP-DIASCREDITO" type="xs:string" form="unqualified"/>
+									<xs:attribute name="TP-TERMINOSPAGO" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CVEMETODO-TRANSP" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FACTURA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FECHAADUPAGO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FECHAFACTURA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FLETE-PAGADO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FOLIOSLIQUIDACION" type="xs:string" form="unqualified"/>
+						<xs:attribute name="FORMA_PAGO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="HORAFACTURA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="NOMADUPAGO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PORCENTAJE_IVA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="REF_ACCESORIO-LATINOA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="SERIE" type="xs:string" form="unqualified"/>
+						<xs:attribute name="TIPO-FACTURA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="TIPOPEDIDO" type="xs:string" form="unqualified"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Detail" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Partes" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="CAPACIDADMOTOR" type="xs:string" form="unqualified"/>
+									<xs:attribute name="COLOR" type="xs:string" form="unqualified"/>
+									<xs:attribute name="MARCA" type="xs:string" form="unqualified"/>
+									<xs:attribute name="MODELO" type="xs:string" form="unqualified"/>
+									<xs:attribute name="MOTOR" type="xs:string" form="unqualified"/>
+									<xs:attribute name="ORDENCOMPRA" type="xs:string" form="unqualified"/>
+									<xs:attribute name="SERIE" type="xs:string" form="unqualified"/>
+									<xs:attribute name="TIPO.2" type="xs:string" form="unqualified"/>
+									<xs:attribute name="TRANSMISION" type="xs:string" form="unqualified"/>
+									<xs:attribute name="CANTIDADVEHICULOS" type="xs:string" form="unqualified"/>
+									<xs:attribute name="CANTPIEZAS-ORDENADAS" type="xs:string" form="unqualified"/>
+									<xs:attribute name="CANTPIEZAS-PEND" type="xs:string" form="unqualified"/>
+									<xs:attribute name="CODIGOPRECIO" type="xs:string" form="unqualified"/>
+									<xs:attribute name="CVEVEHICULAR" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DCSVEHICULO" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DESCTO-LIN-MON-EXT" type="xs:string" form="unqualified"/>
+									<xs:attribute name="DESCTO-LIN-MON-NAL" type="xs:string" form="unqualified"/>
+									<xs:attribute name="IMPORTE-LIN-MON-EXT" type="xs:string" form="unqualified"/>
+									<xs:attribute name="IMPORTE-LIN-MON-NAL" type="xs:string" form="unqualified"/>
+									<xs:attribute name="NUMREFERENCIA-PZA" type="xs:string" form="unqualified"/>
+									<xs:attribute name="P-PUB-PZA-MON-EXT" type="xs:string" form="unqualified"/>
+									<xs:attribute name="P-PUB-PZA-MON-NAL" type="xs:string" form="unqualified"/>
+									<xs:attribute name="PORCENTAJE-DESCTOLINEA" type="xs:string" form="unqualified"/>									
+									<xs:attribute name="PRECIOUNITARIO-MON-EXT" type="xs:string" form="unqualified"/>
+									<xs:attribute name="PRECIOUNITARIO-MON-NAL" type="xs:string" form="unqualified"/>
+									<xs:attribute name="UNIDAD-DE-MEDIDA" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Totals" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Tasas" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="DCSIVA" type="xs:string" form="unqualified"/>
+									<xs:attribute name="IVA" type="xs:string" form="unqualified"/>
+									<xs:attribute name="IVA-MON-NAL" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Leyendas_Precios" maxOccurs="unbounded">								
+							</xs:element>
+							<xs:element name="Gastos" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Descripcion" type="xs:string" form="unqualified"/>
+									<xs:attribute name="Importe" type="xs:string" form="unqualified"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CANTLETRA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="IRF" type="xs:string" form="unqualified"/>
+						<xs:attribute name="IRF-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="IVA-MANEJO-MAT" type="xs:string" form="unqualified"/>
+						<xs:attribute name="IVA-MMAT-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTO-DCTO-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTO-DESCUENTO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOFLETES" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOFLETES-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOMANEJO-MAT" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOSEG-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOSEGURO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MONTOVTA-NETA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MTO-MMAT-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="MTOVTA-NET-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PORC-DESCTO" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PORC-IVA" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PORC-IVAMMATERIAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="IMPORTE-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PRECIOBASE-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PRECIOTOT-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="PRECIOTOTAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="SUBTOTAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="SUBTOTAL-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="VTA-REFACC-MON-NAL" type="xs:string" form="unqualified"/>
+						<xs:attribute name="VTA-REFACCIONES" type="xs:string" form="unqualified"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
