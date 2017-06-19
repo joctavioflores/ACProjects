@@ -1,4 +1,5 @@
-﻿import { NgModule, ErrorHandler } from '@angular/core';
+﻿
+import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component'
 import { aboutPage } from '../pages/about/about';
@@ -8,7 +9,9 @@ import { TabsPage } from '../pages/Tabs/Tabs';
 import { settingsPage } from '../pages/settings/settings';
 import { accountPage } from '../pages/account/account';
 import { ORDER_LISTPage } from '../pages/ORDER-LIST/ORDER-LIST';
+import { worldnewsPage } from '../pages/worldnews/worldnews';
 
+ 
 @NgModule({
     declarations: [
         MyApp,
@@ -18,7 +21,8 @@ import { ORDER_LISTPage } from '../pages/ORDER-LIST/ORDER-LIST';
         ORDER_LISTPage,
         settingsPage,
         accountPage,
-        aboutPage
+        aboutPage,
+        worldnewsPage
     ],
     imports: [
         IonicModule.forRoot(MyApp)
@@ -32,7 +36,8 @@ import { ORDER_LISTPage } from '../pages/ORDER-LIST/ORDER-LIST';
         ORDER_LISTPage,
         settingsPage,
         accountPage,
-        aboutPage
+        aboutPage,
+        worldnewsPage
     ],
     providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

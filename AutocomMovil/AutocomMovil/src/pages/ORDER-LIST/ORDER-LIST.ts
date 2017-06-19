@@ -16,17 +16,18 @@ import { ORDER_INFOPage } from '../ORDER-INFO/ORDER-INFO'
 })
 export class ORDER_LISTPage {
 
-    ordenes: Array<any>;
+    ordenes: any;
 
     constructor(public navCtrl: NavController, public OrdenesWs: ordenesws) { }
 
     searchOrdenDB(event, key) {
         console.log(event.target.value);
-        if (event.target.value.length > 2) {
+        if (event.target.value.length > 3) {
             this.OrdenesWs.buscarOrden(event.target.value).subscribe(
-                data => {
-                    this.ordenes = data.results;
-                    console.log("Se obtiene la informacion: " + data);
+                result => {
+                    this.ordenes = result.ordenes;
+                    console.log("result: " + result);
+                    console.log("data: " + result.data);
                 },
                 err => {
                     console.log(err);

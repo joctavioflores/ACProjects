@@ -2,7 +2,7 @@
 
 import { HomePage } from '../home/home';
 import { ORDER_LISTPage } from '../ORDER-LIST/ORDER-LIST';
-import { ContactPage } from '../Contact/Contact';
+import { worldnewsPage } from '../worldnews/worldnews';
 
 @Component({
     templateUrl: 'tabs.html'
@@ -12,7 +12,7 @@ export class TabsPage {
     // should be each tab's root Page
     tab1Root: any = HomePage;
     tab2Root: any = ORDER_LISTPage;
-    tab3Root: any = ContactPage;
+    tab3Root: any = worldnewsPage;
 
     constructor() {
 
