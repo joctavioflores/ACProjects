@@ -9,6 +9,7 @@ import { TabsPage } from '../pages/Tabs/Tabs';
 import { settingsPage } from '../pages/settings/settings';
 import { accountPage } from '../pages/account/account';
 import { ORDER_LISTPage } from '../pages/ORDER-LIST/ORDER-LIST';
+import { ORDER_INFOPage } from '../pages/ORDER-INFO/ORDER-INFO'
 import { worldnewsPage } from '../pages/worldnews/worldnews';
 
  
@@ -19,6 +20,7 @@ import { worldnewsPage } from '../pages/worldnews/worldnews';
         HomePage,
         TabsPage,
         ORDER_LISTPage,
+        ORDER_INFOPage,
         settingsPage,
         accountPage,
         aboutPage,
@@ -33,6 +35,7 @@ import { worldnewsPage } from '../pages/worldnews/worldnews';
         ContactPage,
         HomePage,
         TabsPage,
+        ORDER_INFOPage,
         ORDER_LISTPage,
         settingsPage,
         accountPage,

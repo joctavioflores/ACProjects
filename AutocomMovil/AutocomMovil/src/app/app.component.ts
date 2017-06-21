@@ -6,6 +6,7 @@ import { TabsPage } from '../pages/Tabs/Tabs';
 import { settingsPage } from '../pages/settings/settings';
 import { accountPage } from '../pages/account/account';
 
+import firebase from 'firebase';
 
 @Component({
     templateUrl: 'app.html'
@@ -18,6 +19,18 @@ export class MyApp {
     pages: Array<{ title: string, component: any }>;
 
     constructor(public platform: Platform) {
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNBzE9DjZ1wncQdO8yduS-FYcGdtfziPk",
+            authDomain: "autocommovildb.firebaseapp.com",
+            databaseURL: "https://autocommovildb.firebaseio.com",
+            projectId: "autocommovildb",
+            storageBucket: "autocommovildb.appspot.com",
+            messagingSenderId: "988151846498"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
         this.initializeApp();
 
         // used for an example of ngFor and navigation

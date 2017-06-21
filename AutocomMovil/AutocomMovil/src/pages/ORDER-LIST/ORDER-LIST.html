@@ -19,7 +19,7 @@
   </ion-item>
 
   <ion-list>
-    <ion-item text-wrap *ngFor="let orden of ordenes" >
+    <ion-item text-wrap *ngFor="let orden of ordenes" (click)="itemTapped($event, orden)" >
      <h1>Orden: {{orden.idOr}}</h1>
      <p>{{orden.VIN}}</p>      
      <p>{{orden.descripcion1}}</p> 
